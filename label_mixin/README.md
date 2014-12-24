@@ -1,4 +1,4 @@
-Sample
+Label for BeSmart
 =====
 
-Sample: http://alexkrivov.com/git_sample/label.html
+Sample label: http://alexkrivov.com/git_sample/label.html
