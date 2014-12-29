@@ -4,29 +4,35 @@
 
 /////////////////// MAKE LABEL FOR BeSmart//////////////////////////
 
-@mixin action-label($color, $fontcolor) {
-    position: relative;
-    background-color: $color;
-    @include box-shadow(2px 4px 0px -2px rgba(151, 164, 164, 0.16));
-    display: inline-block;
-    height: 20px;
+%action_placeholder{
+	position: relative;
+	display: inline-block;
+	height: 20px;
     padding: 0 10px 0 10px;
-
+	@include box-shadow(2px 4px 0px -2px rgba(151, 164, 164, 0.16));
+    
+    font-family: "Arial"; // can delete
     font-size: 11px;
-    font-family: "Arial";
-    color: $fontcolor;
     font-style: italic;
     line-height: 1.727;
-    
+
     &:before{
-        content: '';
+    	content: '';
         position: absolute;
-        width: 0;
-        height: 0;
         left: 0;
         top: 20px;
-        border-top: 7px solid adjust-lightness($color, -15% );
         border-left: 8px solid transparent;
+    }
+    
+}
+
+@mixin action-label($color, $fontcolor) {
+	@extend %action_placeholder;
+    background-color: $color;
+    color: $fontcolor;
+
+    &:before{
+    	border-top: 7px solid adjust-lightness($color, -15% );
     }
 }
 
@@ -35,6 +41,7 @@
 body {
     padding:20px;
 }
+
 
 ///////////////////////CHANGE COLOR BACKGROUND and FONT COLOR/////////////////////////////////////////////////////
 
