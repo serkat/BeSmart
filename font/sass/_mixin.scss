@@ -33,3 +33,26 @@ Both axis : @include centre;*/
 
 }
 
+
+/////////////////////////////
+
+@mixin backgroundPosition($img, $w:200px, $h:200px, $scale:"false"){
+    background-image:url($img);
+    content:"";
+    position: absolute;
+    height: $h;
+    width: $w;
+    overflow: hidden;
+    top:0;
+    
+
+    @if $scale == "true"{
+        transform:scaleX(-1);
+        right: 0;
+    }@else {
+        left:0;
+    }
+}
+
+
+

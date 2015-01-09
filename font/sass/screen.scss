@@ -9,6 +9,26 @@ body{
 	text-align: center;
 }
 
+///////////////////background BESMART ///////////////////////////
+
+.mainbackground{
+	width: 100%;
+	height: 500px;
+	background-color: #fff;
+	position: relative;
+
+	&::after{
+		@include backgroundPosition("../img/test.gif", 300px, 323px, "true");
+	}
+	
+	&::before{
+		@include backgroundPosition("../img/test.gif", 300px, 323px);
+	}
+}
+
+
+
+////////////////////////////////   btn ///////////////////////////
 .button_arrow{
     position: relative;
     display: inline-flex;
